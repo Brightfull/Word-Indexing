@@ -1,0 +1,21 @@
+<form [formGroup]="textForm" novalidate (ngSubmit)="onSubmit()">
+  <mat-card class="shipping-card">
+    <mat-card-header>
+      <mat-card-title>Text :</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-form-field appearance="outline" class="full-width">
+        <textarea matInput placeholder="Enter your text here..." formControlName="text" [(ngModel)]="myText.text"></textarea>
+          <mat-error *ngIf="textForm.controls['text'].hasError('required')">
+            Text is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" type="submit">Submit</button>
+    </mat-card-actions>
+  </mat-card>
+</form>
+
+
+
